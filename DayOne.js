@@ -55,9 +55,54 @@ function factorial(n){
     return result
 }
 console.log(factorial(5));
-// Generate the Fibonacci sequence up to n terms.
-// Check if a number is prime.
-// Find the second largest number in an array.
-// Convert Celsius to Fahrenheit.
+// 10-Generate the Fibonacci sequence up to n terms.
+
+// 11-Check if a number is prime.
+function isPrime(num){
+  if(num<=1){
+    return `${num} is not a prime number`
+  } else{
+   
+      return `${num}is a prime number`
+  }
+
+}
+console.log(isPrime(1));
+console.log(isPrime(5));
+
+//12- Find the second largest number in an array.
+function secondLargest(arr){
+  let uniqueArr = [...new Set(arr)]
+  if(uniqueArr.length<2){
+    return 'no second number is present'
+  }
+  uniqueArr.sort((a,b)=>b-a)
+  return `Second largest number is${uniqueArr[1]}`
+}
+console.log(secondLargest([10,9,7,20]));
+// 13-Convert Celsius to Fahrenheit.
+function celsiusToFahrenheit(celsius){
+  let fahrenheit = (celsius*9/5)+32
+  return `${celsius}°C is equal to ${fahrenheit.toFixed(2)}°F.`;
+}
+console.log(celsiusToFahrenheit(0));  
+console.log(celsiusToFahrenheit(25));
 // Convert a number to a string without using .toString().
+function numToString(num){
+  return `${num}`;
+}
+console.log(numToString(25));
+console.log(typeof numToString(25));
 // Find the length of the longest word in a string.
+function longestWordLength(str){
+  let words = str.split(' ');
+  let maxLength = 0;
+
+  for(let word of words){
+    if(word.length >maxLength){
+      maxLength = word.length
+    }
+  }
+  return maxLength
+}
+console.log(longestWordLength('I love coding'));
