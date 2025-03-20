@@ -87,13 +87,13 @@ function celsiusToFahrenheit(celsius){
 }
 console.log(celsiusToFahrenheit(0));  
 console.log(celsiusToFahrenheit(25));
-// Convert a number to a string without using .toString().
+//14- Convert a number to a string without using .toString().
 function numToString(num){
   return `${num}`;
 }
 console.log(numToString(25));
 console.log(typeof numToString(25));
-// Find the length of the longest word in a string.
+//15- Find the length of the longest word in a string.
 function longestWordLength(str){
   let words = str.split(' ');
   let maxLength = 0;
