@@ -148,18 +148,115 @@ function countWords(str) {
    console.log(onlyDigits('fdf'));
    console.log(onlyDigits(2));
 // 16-Find the GCD (Greatest Common Divisor) of two numbers.
+function findGCD(a,b){
+    while(b !==0){
+        let temp = b;
+        b= a%b;
+        a = temp;
+    }
+    return a;
+}
+let num1 = 56;
+let num2 = 98;
+console.log(`GCD of ${num1} and ${num2} is: ${findGCD(num1, num2)}`);
+// 17-Find the LCM (Least Common Multiple) of two numbers.
+function findLCM(a, b) {
+    return (a * b) / findGCD(a, b);
+  }
+  
+  // Example usage
+  let numi = 12;
+  let numii = 18;
+  console.log(`LCM of ${numi} and ${numii} is: ${findLCM(numi, numii)}`);
+// 18-Generate a random number between two given numbers.
+function getRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+  let min = 10;
+  let max = 50;
+  console.log(`Random number between ${min} and ${max} is: ${getRandomNumber(min, max)}`);
+  
+// 19-Replace all spaces in a string with hyphens (-).
+function allSpace(str){
+   return str.split(' ').join('-')
+}
+console.log(allSpace('Hello World'));
+// 20-Find the intersection of two arrays.
+function findInterSection(arr1,arr2){
+  return arr1.filter(item=> arr2.includes(item))
+}
+let array1 = [1,2,7,8]
+let array2 = [1,2,3,4,5]
+console.log(findInterSection(array1,array2));
+//21-Find the union of two arrays.
+  function findUnion(arr1,arr2){
+    return [...new Set([...arr1,...arr2])]
+  }
+  let arrayOne = [1, 2, 3, 4, 5];
+  let arrayTwo = [4, 5, 6, 7, 8];
+  console.log(`Union: ${findUnion(arrayOne, arrayTwo)}`);
+// 22-Check if a string ends with a specific substring.
+function subs(str,substr){
+    return str.endsWith(substr)
+}
+let myString = 'Hello world'
+let target = 'world'
+console.log(subs(myString,target));
 
-// Find the LCM (Least Common Multiple) of two numbers.
-// Generate a random number between two given numbers.
-// Replace all spaces in a string with hyphens (-).
-// Find the intersection of two arrays.
-// Find the union of two arrays.
-// Check if a string ends with a specific substring.
-// Check if a string starts with a specific substring.
-// Rotate an array by k positions.
-// Find the sum of digits of a number.
-// Find the product of digits of a number.
-// Convert a binary number to decimal.
-// Convert a decimal number to binary.
-// Reverse the words in a sentence.
-// Find the first non-repeating character in a string.
+// 23-Check if a string starts with a specific substring.
+function startsub(str,sbstr){
+     return str.startsWith(sbstr)
+}
+let one = 'my name'
+let two='my'
+console.log(startsub(one,two));
+// 24-Rotate an array by k positions.
+
+// 25-Find the sum of digits of a number.
+function Sum(dig){
+  let sum = 0;
+  let str =dig.toString()
+  for(let i=0;i<str.length;i++){
+    sum += parseInt(str[i])
+  }
+  return sum;
+}
+console.log(Sum(234));
+// 26-Find the product of digits of a number.
+function productOfDigits(num) {
+    let product = 1;
+    let str = num.toString(); 
+    for (let i = 0; i < str.length; i++) {
+      product *= parseInt(str[i]); 
+    }
+    return product;
+  }
+  
+  console.log(productOfDigits(1234));
+// 27-Convert a binary number to decimal.
+function binaryToDecimal(binary) {
+    return parseInt(binary, 2);
+  }
+  console.log(binaryToDecimal('1010'));
+// 28-Convert a decimal number to binary.
+function decimalToBinary(decimal) {
+    return decimal.toString(2);
+  }
+  console.log(decimalToBinary(10))
+// 29-Reverse the words in a sentence.
+function reverseWord(sentence){
+    return sentence.split(' ').reverse().join(' ')
+}
+console.log(reverseWord(' Hello World'));
+// 30-Find the first non-repeating character in a string.
+function firstNonRepeatingCharacter(str) {
+    for (let i = 0; i < str.length; i++) {
+
+      if (str.indexOf(str[i]) === str.lastIndexOf(str[i])) {
+        return str[i];
+      }
+    }
+    return null; 
+  }
+  console.log(firstNonRepeatingCharacter('aabbc'));     
+  
